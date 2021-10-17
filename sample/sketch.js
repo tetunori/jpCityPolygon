@@ -19,7 +19,7 @@ function preload() {
 }
 
 let gTargetPrefecture = '北海道'
-let gTargetCity = '小樽市'
+let gTargetCity = '札幌市中央区'
 function setup() {
   // p5.js settings
   W = min(windowWidth, windowHeight);
@@ -28,6 +28,7 @@ function setup() {
   frameRate(0.5);
   textSize(W / 10);
   textFont(gFont);
+  initializeSelector();
 
   loadScript('../data/'+ gTargetPrefecture + '/' + gTargetCity + '.min.js');
 }
