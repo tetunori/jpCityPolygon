@@ -14049,4 +14049,5 @@ const 北海道札幌市清田区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市清田区'] = 北海道札幌市清田区;

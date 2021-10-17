@@ -44585,4 +44585,5 @@ const 北海道幌延町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道幌延町'] = 北海道幌延町;

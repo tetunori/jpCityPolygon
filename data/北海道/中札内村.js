@@ -24265,4 +24265,5 @@ const 北海道中札内村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道中札内村'] = 北海道中札内村;

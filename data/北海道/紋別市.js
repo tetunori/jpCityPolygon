@@ -96005,4 +96005,5 @@ const 北海道紋別市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道紋別市'] = 北海道紋別市;

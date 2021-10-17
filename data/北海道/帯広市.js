@@ -41145,4 +41145,5 @@ const 北海道帯広市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道帯広市'] = 北海道帯広市;

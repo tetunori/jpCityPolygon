@@ -36561,4 +36561,5 @@ const 北海道岩見沢市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道岩見沢市'] = 北海道岩見沢市;

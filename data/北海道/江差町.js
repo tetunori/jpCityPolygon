@@ -76345,4 +76345,5 @@ const 北海道江差町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道江差町'] = 北海道江差町;

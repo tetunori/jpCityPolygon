@@ -161201,4 +161201,5 @@ const 北海道せたな町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道せたな町'] = 北海道せたな町;

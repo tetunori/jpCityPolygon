@@ -14785,4 +14785,5 @@ const 北海道当麻町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道当麻町'] = 北海道当麻町;

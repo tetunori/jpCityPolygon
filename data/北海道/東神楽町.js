@@ -6057,4 +6057,5 @@ const 北海道東神楽町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道東神楽町'] = 北海道東神楽町;

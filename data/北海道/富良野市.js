@@ -28617,4 +28617,5 @@ const 北海道富良野市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道富良野市'] = 北海道富良野市;

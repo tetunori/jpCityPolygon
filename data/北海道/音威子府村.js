@@ -28641,4 +28641,5 @@ const 北海道音威子府村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道音威子府村'] = 北海道音威子府村;

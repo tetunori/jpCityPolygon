@@ -37361,4 +37361,5 @@ const 北海道今金町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道今金町'] = 北海道今金町;

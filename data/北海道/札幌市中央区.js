@@ -14457,4 +14457,5 @@ const 北海道札幌市中央区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市中央区'] = 北海道札幌市中央区;

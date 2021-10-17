@@ -26081,4 +26081,5 @@ const 北海道栗山町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道栗山町'] = 北海道栗山町;

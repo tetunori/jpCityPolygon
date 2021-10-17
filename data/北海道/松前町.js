@@ -175425,4 +175425,5 @@ const 北海道松前町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道松前町'] = 北海道松前町;

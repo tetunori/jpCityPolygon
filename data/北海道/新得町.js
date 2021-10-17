@@ -47761,4 +47761,5 @@ const 北海道新得町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道新得町'] = 北海道新得町;

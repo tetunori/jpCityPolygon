@@ -57617,4 +57617,5 @@ const 北海道長万部町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道長万部町'] = 北海道長万部町;

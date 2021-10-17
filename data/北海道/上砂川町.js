@@ -10073,4 +10073,5 @@ const 北海道上砂川町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道上砂川町'] = 北海道上砂川町;

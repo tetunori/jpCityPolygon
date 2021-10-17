@@ -124461,4 +124461,5 @@ const 北海道積丹町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道積丹町'] = 北海道積丹町;

@@ -11841,4 +11841,5 @@ const 北海道札幌市豊平区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市豊平区'] = 北海道札幌市豊平区;

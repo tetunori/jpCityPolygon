@@ -64213,4 +64213,5 @@ const 北海道興部町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道興部町'] = 北海道興部町;

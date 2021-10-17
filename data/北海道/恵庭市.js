@@ -29985,4 +29985,5 @@ const 北海道恵庭市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道恵庭市'] = 北海道恵庭市;

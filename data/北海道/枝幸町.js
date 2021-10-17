@@ -74933,4 +74933,5 @@ const 北海道枝幸町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道枝幸町'] = 北海道枝幸町;

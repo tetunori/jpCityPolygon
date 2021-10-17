@@ -60121,4 +60121,5 @@ const 北海道旭川市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道旭川市'] = 北海道旭川市;

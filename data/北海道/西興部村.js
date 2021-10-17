@@ -24449,4 +24449,5 @@ const 北海道西興部村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道西興部村'] = 北海道西興部村;

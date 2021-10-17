@@ -79105,4 +79105,5 @@ const 北海道鶴居村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道鶴居村'] = 北海道鶴居村;

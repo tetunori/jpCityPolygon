@@ -23353,4 +23353,5 @@ const 北海道清水町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道清水町'] = 北海道清水町;

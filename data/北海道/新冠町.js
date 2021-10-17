@@ -47533,4 +47533,5 @@ const 北海道新冠町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道新冠町'] = 北海道新冠町;

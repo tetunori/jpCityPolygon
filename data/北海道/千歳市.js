@@ -42993,4 +42993,5 @@ const 北海道千歳市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道千歳市'] = 北海道千歳市;

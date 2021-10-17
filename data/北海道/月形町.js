@@ -16665,4 +16665,5 @@ const 北海道月形町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道月形町'] = 北海道月形町;

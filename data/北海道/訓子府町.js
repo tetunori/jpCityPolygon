@@ -27873,4 +27873,5 @@ const 北海道訓子府町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道訓子府町'] = 北海道訓子府町;

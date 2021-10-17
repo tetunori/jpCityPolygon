@@ -67137,4 +67137,5 @@ const 北海道上川町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道上川町'] = 北海道上川町;

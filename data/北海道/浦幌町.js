@@ -70637,4 +70637,5 @@ const 北海道浦幌町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道浦幌町'] = 北海道浦幌町;

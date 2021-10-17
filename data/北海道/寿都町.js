@@ -38113,4 +38113,5 @@ const 北海道寿都町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道寿都町'] = 北海道寿都町;

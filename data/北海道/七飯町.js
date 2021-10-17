@@ -27185,4 +27185,5 @@ const 北海道七飯町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道七飯町'] = 北海道七飯町;

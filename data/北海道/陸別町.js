@@ -65777,4 +65777,5 @@ const 北海道陸別町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道陸別町'] = 北海道陸別町;

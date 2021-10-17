@@ -43969,4 +43969,5 @@ const 北海道芦別市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道芦別市'] = 北海道芦別市;

@@ -93325,4 +93325,5 @@ const 北海道石狩市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道石狩市'] = 北海道石狩市;

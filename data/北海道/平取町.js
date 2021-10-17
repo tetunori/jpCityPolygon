@@ -63337,4 +63337,5 @@ const 北海道平取町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道平取町'] = 北海道平取町;

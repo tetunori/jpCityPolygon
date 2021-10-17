@@ -5545,4 +5545,5 @@ const 北海道札幌市厚別区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市厚別区'] = 北海道札幌市厚別区;

@@ -44121,4 +44121,5 @@ const 北海道美瑛町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道美瑛町'] = 北海道美瑛町;

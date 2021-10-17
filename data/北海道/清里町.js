@@ -23473,4 +23473,5 @@ const 北海道清里町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道清里町'] = 北海道清里町;

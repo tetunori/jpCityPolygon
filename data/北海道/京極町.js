@@ -16009,4 +16009,5 @@ const 北海道京極町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道京極町'] = 北海道京極町;

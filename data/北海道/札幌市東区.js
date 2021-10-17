@@ -6849,4 +6849,5 @@ const 北海道札幌市東区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市東区'] = 北海道札幌市東区;

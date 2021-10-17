@@ -78025,4 +78025,5 @@ const 北海道島牧村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道島牧村'] = 北海道島牧村;

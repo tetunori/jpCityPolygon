@@ -27049,4 +27049,5 @@ const 北海道幕別町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道幕別町'] = 北海道幕別町;

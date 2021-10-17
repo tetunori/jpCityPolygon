@@ -54649,4 +54649,5 @@ const 北海道小平町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道小平町'] = 北海道小平町;

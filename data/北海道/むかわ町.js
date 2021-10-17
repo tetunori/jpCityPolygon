@@ -63073,4 +63073,5 @@ const 北海道むかわ町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道むかわ町'] = 北海道むかわ町;

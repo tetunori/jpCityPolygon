@@ -38841,4 +38841,5 @@ const 北海道深川市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道深川市'] = 北海道深川市;

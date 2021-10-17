@@ -36665,4 +36665,5 @@ const 北海道小清水町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道小清水町'] = 北海道小清水町;

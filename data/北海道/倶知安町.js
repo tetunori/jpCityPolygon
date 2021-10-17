@@ -28153,4 +28153,5 @@ const 北海道倶知安町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道倶知安町'] = 北海道倶知安町;

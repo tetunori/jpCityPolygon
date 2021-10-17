@@ -41205,4 +41205,5 @@ const 北海道豊浦町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道豊浦町'] = 北海道豊浦町;

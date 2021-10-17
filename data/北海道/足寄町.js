@@ -102521,4 +102521,5 @@ const 北海道足寄町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道足寄町'] = 北海道足寄町;

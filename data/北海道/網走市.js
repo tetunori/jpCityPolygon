@@ -92261,4 +92261,5 @@ const 北海道網走市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道網走市'] = 北海道網走市;

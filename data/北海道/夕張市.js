@@ -48177,4 +48177,5 @@ const 北海道夕張市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道夕張市'] = 北海道夕張市;

@@ -8969,4 +8969,5 @@ const 北海道札幌市手稲区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市手稲区'] = 北海道札幌市手稲区;

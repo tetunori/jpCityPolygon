@@ -55285,4 +55285,5 @@ const 北海道白老町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道白老町'] = 北海道白老町;

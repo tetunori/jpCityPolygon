@@ -162881,4 +162881,5 @@ const 北海道函館市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道函館市'] = 北海道函館市;

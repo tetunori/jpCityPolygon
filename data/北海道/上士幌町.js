@@ -67241,4 +67241,5 @@ const 北海道上士幌町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道上士幌町'] = 北海道上士幌町;

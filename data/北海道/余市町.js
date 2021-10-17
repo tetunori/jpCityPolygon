@@ -64433,4 +64433,5 @@ const 北海道余市町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道余市町'] = 北海道余市町;

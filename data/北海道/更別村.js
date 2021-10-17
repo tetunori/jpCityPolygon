@@ -10049,4 +10049,5 @@ const 北海道更別村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道更別村'] = 北海道更別村;

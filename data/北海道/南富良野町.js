@@ -46377,4 +46377,5 @@ const 北海道南富良野町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道南富良野町'] = 北海道南富良野町;

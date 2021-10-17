@@ -8297,4 +8297,5 @@ const 北海道新篠津村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道新篠津村'] = 北海道新篠津村;

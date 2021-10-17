@@ -36017,4 +36017,5 @@ const 北海道留萌市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道留萌市'] = 北海道留萌市;

@@ -33249,4 +33249,5 @@ const 北海道北竜町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道北竜町'] = 北海道北竜町;

@@ -16897,4 +16897,5 @@ const 北海道鹿部町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道鹿部町'] = 北海道鹿部町;

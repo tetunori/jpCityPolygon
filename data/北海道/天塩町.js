@@ -43229,4 +43229,5 @@ const 北海道天塩町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道天塩町'] = 北海道天塩町;

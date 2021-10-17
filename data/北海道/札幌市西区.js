@@ -13225,4 +13225,5 @@ const 北海道札幌市西区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市西区'] = 北海道札幌市西区;

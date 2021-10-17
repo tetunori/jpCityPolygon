@@ -20961,4 +20961,5 @@ const 北海道安平町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道安平町'] = 北海道安平町;

@@ -14409,4 +14409,5 @@ const 北海道留寿都村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道留寿都村'] = 北海道留寿都村;

@@ -13081,4 +13081,5 @@ const 北海道奈井江町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道奈井江町'] = 北海道奈井江町;

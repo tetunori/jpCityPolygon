@@ -43233,4 +43233,5 @@ const 北海道黒松内町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道黒松内町'] = 北海道黒松内町;

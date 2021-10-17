@@ -12953,4 +12953,5 @@ const 北海道鷹栖町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道鷹栖町'] = 北海道鷹栖町;

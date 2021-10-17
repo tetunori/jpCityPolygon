@@ -43457,4 +43457,5 @@ const 北海道鹿追町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道鹿追町'] = 北海道鹿追町;

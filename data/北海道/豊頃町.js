@@ -34201,4 +34201,5 @@ const 北海道豊頃町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道豊頃町'] = 北海道豊頃町;

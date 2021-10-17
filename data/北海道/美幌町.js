@@ -58345,4 +58345,5 @@ const 北海道美幌町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道美幌町'] = 北海道美幌町;

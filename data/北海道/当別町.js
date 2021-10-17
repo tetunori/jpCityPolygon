@@ -41697,4 +41697,5 @@ const 北海道当別町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道当別町'] = 北海道当別町;

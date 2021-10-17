@@ -175741,4 +175741,5 @@ const 北海道北見市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道北見市'] = 北海道北見市;

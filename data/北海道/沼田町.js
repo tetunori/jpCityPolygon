@@ -22705,4 +22705,5 @@ const 北海道沼田町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道沼田町'] = 北海道沼田町;

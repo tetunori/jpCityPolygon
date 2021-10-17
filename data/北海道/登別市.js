@@ -46033,4 +46033,5 @@ const 北海道登別市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道登別市'] = 北海道登別市;

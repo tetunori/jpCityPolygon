@@ -31769,4 +31769,5 @@ const 北海道共和町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道共和町'] = 北海道共和町;

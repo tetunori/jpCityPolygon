@@ -68541,4 +68541,5 @@ const 北海道八雲町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道八雲町'] = 北海道八雲町;

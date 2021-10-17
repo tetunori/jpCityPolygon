@@ -54553,4 +54553,5 @@ const 北海道新ひだか町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道新ひだか町'] = 北海道新ひだか町;

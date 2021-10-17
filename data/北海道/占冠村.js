@@ -35401,4 +35401,5 @@ const 北海道占冠村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道占冠村'] = 北海道占冠村;

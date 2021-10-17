@@ -89473,4 +89473,5 @@ const 北海道遠軽町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道遠軽町'] = 北海道遠軽町;

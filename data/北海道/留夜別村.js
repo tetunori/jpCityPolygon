@@ -179853,4 +179853,5 @@ const 北海道留夜別村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道留夜別村'] = 北海道留夜別村;

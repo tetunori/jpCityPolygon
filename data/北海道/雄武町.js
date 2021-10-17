@@ -41493,4 +41493,5 @@ const 北海道雄武町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道雄武町'] = 北海道雄武町;

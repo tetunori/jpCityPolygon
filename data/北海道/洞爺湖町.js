@@ -30561,4 +30561,5 @@ const 北海道洞爺湖町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道洞爺湖町'] = 北海道洞爺湖町;

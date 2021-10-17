@@ -51681,4 +51681,5 @@ const 北海道釧路町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道釧路町'] = 北海道釧路町;

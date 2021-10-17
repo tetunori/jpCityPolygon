@@ -60545,4 +60545,5 @@ const 北海道苫小牧市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道苫小牧市'] = 北海道苫小牧市;

@@ -38921,4 +38921,5 @@ const 北海道芽室町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道芽室町'] = 北海道芽室町;

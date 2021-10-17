@@ -9025,4 +9025,5 @@ const 北海道砂川市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道砂川市'] = 北海道砂川市;

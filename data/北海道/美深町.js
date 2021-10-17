@@ -35833,4 +35833,5 @@ const 北海道美深町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道美深町'] = 北海道美深町;

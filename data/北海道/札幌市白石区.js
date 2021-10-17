@@ -6417,4 +6417,5 @@ const 北海道札幌市白石区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市白石区'] = 北海道札幌市白石区;

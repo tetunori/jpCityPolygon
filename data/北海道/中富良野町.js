@@ -7897,4 +7897,5 @@ const 北海道中富良野町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道中富良野町'] = 北海道中富良野町;

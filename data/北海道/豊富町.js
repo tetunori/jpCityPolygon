@@ -43941,4 +43941,5 @@ const 北海道豊富町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道豊富町'] = 北海道豊富町;

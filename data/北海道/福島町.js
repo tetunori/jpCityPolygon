@@ -52921,4 +52921,5 @@ const 北海道福島町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道福島町'] = 北海道福島町;

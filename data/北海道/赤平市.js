@@ -20881,4 +20881,5 @@ const 北海道赤平市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道赤平市'] = 北海道赤平市;

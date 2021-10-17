@@ -134377,4 +134377,5 @@ const 北海道古平町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道古平町'] = 北海道古平町;

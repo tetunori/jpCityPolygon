@@ -23969,4 +23969,5 @@ const 北海道壮瞥町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道壮瞥町'] = 北海道壮瞥町;

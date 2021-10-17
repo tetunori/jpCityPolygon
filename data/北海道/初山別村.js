@@ -31293,4 +31293,5 @@ const 北海道初山別村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道初山別村'] = 北海道初山別村;

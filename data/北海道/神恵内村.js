@@ -83153,4 +83153,5 @@ const 北海道神恵内村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道神恵内村'] = 北海道神恵内村;

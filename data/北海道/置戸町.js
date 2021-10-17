@@ -48065,4 +48065,5 @@ const 北海道置戸町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道置戸町'] = 北海道置戸町;

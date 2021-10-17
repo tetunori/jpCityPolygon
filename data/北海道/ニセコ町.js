@@ -29129,4 +29129,5 @@ const 北海道ニセコ町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道ニセコ町'] = 北海道ニセコ町;

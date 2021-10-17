@@ -30905,4 +30905,5 @@ const 北海道名寄市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道名寄市'] = 北海道名寄市;

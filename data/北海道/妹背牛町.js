@@ -3713,4 +3713,5 @@ const 北海道妹背牛町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道妹背牛町'] = 北海道妹背牛町;

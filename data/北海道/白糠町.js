@@ -155293,4 +155293,5 @@ const 北海道白糠町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道白糠町'] = 北海道白糠町;

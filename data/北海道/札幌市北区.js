@@ -14409,4 +14409,5 @@ const 北海道札幌市北区 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道札幌市北区'] = 北海道札幌市北区;

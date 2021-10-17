@@ -132089,4 +132089,5 @@ const 北海道厚岸町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道厚岸町'] = 北海道厚岸町;

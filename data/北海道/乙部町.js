@@ -29717,4 +29717,5 @@ const 北海道乙部町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道乙部町'] = 北海道乙部町;

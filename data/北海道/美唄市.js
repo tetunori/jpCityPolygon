@@ -20977,4 +20977,5 @@ const 北海道美唄市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道美唄市'] = 北海道美唄市;

@@ -20625,4 +20625,5 @@ const 北海道和寒町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道和寒町'] = 北海道和寒町;

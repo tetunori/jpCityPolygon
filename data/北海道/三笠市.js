@@ -33849,4 +33849,5 @@ const 北海道三笠市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道三笠市'] = 北海道三笠市;

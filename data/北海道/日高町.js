@@ -98005,4 +98005,5 @@ const 北海道日高町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道日高町'] = 北海道日高町;

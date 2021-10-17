@@ -36349,4 +36349,5 @@ const 北海道知内町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道知内町'] = 北海道知内町;

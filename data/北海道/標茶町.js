@@ -151153,4 +151153,5 @@ const 北海道標茶町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道標茶町'] = 北海道標茶町;

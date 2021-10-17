@@ -74729,4 +74729,5 @@ const 北海道森町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道森町'] = 北海道森町;

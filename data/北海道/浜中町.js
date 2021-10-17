@@ -144473,4 +144473,5 @@ const 北海道浜中町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道浜中町'] = 北海道浜中町;

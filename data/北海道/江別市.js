@@ -10217,4 +10217,5 @@ const 北海道江別市 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道江別市'] = 北海道江別市;

@@ -73921,4 +73921,5 @@ const 北海道標津町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道標津町'] = 北海道標津町;

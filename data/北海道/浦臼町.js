@@ -11801,4 +11801,5 @@ const 北海道浦臼町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道浦臼町'] = 北海道浦臼町;

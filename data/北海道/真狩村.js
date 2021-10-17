@@ -15561,4 +15561,5 @@ const 北海道真狩村 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道真狩村'] = 北海道真狩村;

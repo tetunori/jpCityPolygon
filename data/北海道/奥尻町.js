@@ -148257,4 +148257,5 @@ const 北海道奥尻町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道奥尻町'] = 北海道奥尻町;

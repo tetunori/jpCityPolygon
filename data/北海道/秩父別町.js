@@ -4817,4 +4817,5 @@ const 北海道秩父別町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道秩父別町'] = 北海道秩父別町;

@@ -138781,4 +138781,5 @@ const 北海道羅臼町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道羅臼町'] = 北海道羅臼町;

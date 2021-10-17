@@ -59425,4 +59425,5 @@ const 北海道佐呂間町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道佐呂間町'] = 北海道佐呂間町;

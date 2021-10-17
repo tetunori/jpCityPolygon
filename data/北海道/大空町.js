@@ -41513,4 +41513,5 @@ const 北海道大空町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道大空町'] = 北海道大空町;

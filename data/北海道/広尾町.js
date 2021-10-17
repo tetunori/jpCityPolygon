@@ -55517,4 +55517,5 @@ const 北海道広尾町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道広尾町'] = 北海道広尾町;

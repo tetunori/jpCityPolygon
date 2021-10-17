@@ -149301,4 +149301,5 @@ const 北海道別海町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道別海町'] = 北海道別海町;

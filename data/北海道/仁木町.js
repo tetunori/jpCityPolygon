@@ -25281,4 +25281,5 @@ const 北海道仁木町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道仁木町'] = 北海道仁木町;

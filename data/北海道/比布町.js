@@ -11729,4 +11729,5 @@ const 北海道比布町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道比布町'] = 北海道比布町;

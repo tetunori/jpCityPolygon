@@ -61425,4 +61425,5 @@ const 北海道滝上町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道滝上町'] = 北海道滝上町;

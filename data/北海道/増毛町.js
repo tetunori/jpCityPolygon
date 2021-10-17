@@ -53453,4 +53453,5 @@ const 北海道増毛町 = {
       }
     ]
   ]
-}
+};
+ if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道増毛町'] = 北海道増毛町;
