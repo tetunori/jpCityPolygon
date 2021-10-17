@@ -19,7 +19,7 @@ function preload() {
 }
 
 let gTargetPrefecture = '北海道'
-let gTargetCity = '札幌市北区'
+let gTargetCity = '小樽市'
 function setup() {
   // p5.js settings
   W = min(windowWidth, windowHeight);
@@ -39,10 +39,10 @@ function draw() {
       return;
     }
   let targetCity = cityObjs[gTargetPrefecture + gTargetCity];
-  const targetVertex = targetCity.polygons[0];
+  const targetPolygons = targetCity.polygons;
 
   // Get N/S/E/W edge values
-  const ends = getEnds(targetVertex);
+  const ends = getEnds(targetPolygons);
 
   // p5.pattern settings
   let COLS;
@@ -84,11 +84,15 @@ function draw() {
     tl.push();
     tl.translate(-ends.w * shapeScale + horizontalMargin, ends.s * shapeScale + verticalMargin);
     tl.erase();
-    tl.beginShapePattern();
-    for (let i = 0; i < targetVertex.length; i++) {
-      tl.vertexPattern(targetVertex[i].x * shapeScale, -targetVertex[i].y * shapeScale);
-    }
-    tl.endShapePattern();
+
+    targetPolygons.forEach( polygon => {
+      tl.beginShapePattern();
+      for (let i = 0; i < polygon.length; i++) {
+        tl.vertexPattern(polygon[i].x * shapeScale, -polygon[i].y * shapeScale);
+      }
+      tl.endShapePattern();
+    });
+
     tl.noErase();
     tl.pop();
   }
@@ -113,10 +117,15 @@ const drawBackGroundPattern = () => {
 };
 
 // Get Ends
-const getEnds = (vertexArray) => {
-  // Get lons/lats array from vertex array
-  const longitudes = vertexArray.map((v) => v.x);
-  const latitudes = vertexArray.map((v) => v.y);
+const getEnds = (polygons) => {
+  // Get lons/lats array from vertex array(polygon)
+  let longitudes = [];
+  let latitudes = [];
+
+  polygons.forEach( polygon => {
+    longitudes = longitudes.concat( polygon.map((v) => v.x) );
+    latitudes = latitudes.concat( polygon.map((v) => v.y) );
+  });
   // print({ longitude, latitude });
 
   // Prepare max/min proc
