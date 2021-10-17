@@ -65,9 +65,11 @@ async function loadData(fileData) {
     // For safely donwloading files, we have enough time to create it.
     setTimeout(() => {
       const v = unifiedData[i];
-      const prefix = 'const ' + v.prefecture + v.name + ' = ';
-      outputScript(v.name + '.min.txt', prefix + JSON.stringify(v));
-      outputScript(v.name + '.txt', prefix + JSON.stringify(v, null, '  '));
+      const longname = v.prefecture + v.name;
+      const prefix = 'const ' + longname + ' = ';
+      const suffix = ';\n if(typeof cityObjs === \'undefined\'){cityObjs = {};} cityObjs[\'' + longname + '\'] = ' + longname + ';';
+      outputScript(v.name + '.min.txt', prefix + JSON.stringify(v) + suffix);
+      outputScript(v.name + '.txt', prefix + JSON.stringify(v, null, '  ') + suffix);
     }, i * 1000);
   }
 }
