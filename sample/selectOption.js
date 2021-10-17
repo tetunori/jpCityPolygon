@@ -1,6 +1,4 @@
 
-let citySelector;
-let prefectureSelector;
 
 const prefectureSelectorOption = [
   '北海道',
@@ -249,29 +247,3 @@ const citySelectorOption = {
     '上ノ国町',
   ]
 };
-
-const initializeSelector = () => {
-
-  prefectureSelector = createSelect();
-  prefectureSelector.position(10, 10);
-  prefectureSelectorOption.forEach( element => {
-    prefectureSelector.option( element );
-  });
-  // citySelector.selected('kiwi');
-  prefectureSelector.changed(mySelectEvent);
-
-  citySelector = createSelect();
-  citySelector.position(10, 40);
-  citySelectorOption[gTargetPrefecture].forEach( element => {
-    citySelector.option( element );
-  });
-  // citySelector.selected('kiwi');
-  citySelector.changed(mySelectEvent);
-
-}
-
-function mySelectEvent() {
-  gTargetPrefecture = prefectureSelector.value();
-  gTargetCity = citySelector.value();
-  loadScript('../data/'+ gTargetPrefecture + '/' + gTargetCity + '.min.js');
-}

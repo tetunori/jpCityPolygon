@@ -13,6 +13,8 @@
 let topLayer;
 let W;
 
+let gAutoGenerate = true;
+
 let gFont;
 function preload() {
   gFont = loadFont('NotoSansJP-Bold.otf');
@@ -23,12 +25,14 @@ let gTargetCity = '札幌市中央区'
 function setup() {
   // p5.js settings
   W = min(windowWidth, windowHeight);
-  createCanvas(W, W);
+  createCanvas(W, W).mousePressed( toggleController );
   topLayer = createGraphics(W, W);
   frameRate(0.5);
   textSize(W / 10);
   textFont(gFont);
-  initializeSelector();
+
+  // Prepare controllers
+  prepareControllers();
 
   loadScript('../data/'+ gTargetPrefecture + '/' + gTargetCity + '.min.js');
 }
@@ -102,6 +106,16 @@ function draw() {
   fill(255, 255, 255, 140);
   const margin = 30;
   text(targetCity.name, margin, W / 12 + margin);
+
+
+  if( isEnableCaptureImage() ){
+
+    saveImage();
+
+  }
+
+  // Redraw controller
+  redrawControllers();
 }
 
 const drawBackGroundPattern = () => {
@@ -177,3 +191,55 @@ function createCols(url) {
   for (let i = 0; i < colArr.length; i++) colArr[i] = '#' + colArr[i];
   return colArr;
 }
+
+const saveImage = () => {
+
+  disableCaptureImage();
+  const name = gTargetPrefecture + gTargetCity + '_' + getYYYYMMDD_hhmmss( true ) + '.png';
+  saveCanvas( name, 'png' );
+}
+
+// get Timestamp string
+const getYYYYMMDD_hhmmss = ( isNeedUS ) => {
+
+  const now = new Date();
+  let retVal = '';
+
+  // YYMMDD
+  retVal += now.getFullYear();
+  retVal += padZero2Digit( now.getMonth() + 1 );
+  retVal += padZero2Digit( now.getDate() );
+
+  if( isNeedUS ){ retVal += '_'; }
+
+  // hhmmss
+  retVal += padZero2Digit( now.getHours() );
+  retVal += padZero2Digit( now.getMinutes() );
+  retVal += padZero2Digit( now.getSeconds() );
+
+  return retVal;
+
+}
+
+// padding function
+const padZero2Digit = ( num ) => {
+  return ( num < 10 ? "0" : "" ) + num;
+}
+
+let gIsCaptureImage = false;
+
+// Is capture image function is ready or not
+const isEnableCaptureImage = () => {
+  return ( gIsCaptureImage === true );
+}
+
+// Enable capture image function
+const enableCaptureImage = () => {
+  gIsCaptureImage = true;
+}
+
+// Disable capture image function
+const disableCaptureImage = () => {
+  gIsCaptureImage = false;
+}
+
