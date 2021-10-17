@@ -26,6 +26,7 @@ async function loadData(fileData) {
     name += v.properties.N03_004;
 
     return {
+      prefecture: prefectureName,
       name: name,
       latlons: [v.geometry.coordinates[0]],
     };
@@ -64,8 +65,9 @@ async function loadData(fileData) {
     // For safely donwloading files, we have enough time to create it.
     setTimeout(() => {
       const v = unifiedData[i];
-      outputScript(v.name + '.min.txt', JSON.stringify(v));
-      outputScript(v.name + '.txt', JSON.stringify(v, null, '  '));
+      const prefix = 'const ' + v.prefecture + v.name + ' = ';
+      outputScript(v.name + '.min.txt', prefix + JSON.stringify(v));
+      outputScript(v.name + '.txt', prefix + JSON.stringify(v, null, '  '));
     }, i * 1000);
   }
 }
@@ -89,6 +91,7 @@ const getPrefectureName = (data) => {
 const addXYCoodinatesArray = (data) => {
   // add simply polygons(including (x, y) coordinates) element
   const result = data.map((v) => ({
+    prefecture: v.prefecture,
     name: v.name,
     latlons: v.latlons,
     polygons: [],
@@ -137,6 +140,7 @@ const convertLatLonArrayToObj = (data) => {
     });
 
     return {
+      prefecture: v.prefecture,
       name: v.name,
       latlons: latlons,
       polygons: v.polygons,
