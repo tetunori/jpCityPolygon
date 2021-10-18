@@ -75231,3 +75231,35 @@ const 北海道羽幌町 = {
   ]
 };
  if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道羽幌町'] = 北海道羽幌町;
+{
+  // Get N/S/E/W edge values from all of the polygons that is (x,y)s.
+  const ends = getEnds(北海道羽幌町['polygons']);
+
+  // Shape size on actual coordinate(before scaling)
+  const shapeWidth = abs(ends.w - ends.e);
+  const shapeHeight = abs(ends.s - ends.n);
+
+  const SquareSize = 360;
+
+  // Calcurate scale and margin.
+  let shapeScale;
+  let horizontalMargin = SquareSize * 0.1;
+  let verticalMargin = SquareSize * 0.1;
+  if (shapeWidth > shapeHeight) {
+    shapeScale = (SquareSize - 2 * horizontalMargin) / shapeWidth;
+    verticalMargin = (SquareSize - shapeHeight * shapeScale) / 2;
+  } else {
+    shapeScale = (SquareSize - 2 * verticalMargin) / shapeHeight;
+    horizontalMargin = (SquareSize - shapeWidth * shapeScale) / 2;
+  }
+
+  const normalizedPolygons = 北海道羽幌町['polygons'].map( (polygon) => {
+    return polygon.map( coordinates => {
+        return {x: coordinates.x * shapeScale - ends.w * shapeScale + horizontalMargin, 
+                y: -coordinates.y * shapeScale + ends.s * shapeScale + verticalMargin};
+      });
+  });
+
+  北海道羽幌町['normalizedPolygons'] = normalizedPolygons;
+}
+      
