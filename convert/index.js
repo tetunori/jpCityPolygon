@@ -1,5 +1,3 @@
-// Data should be from 「国土数値情報（行政区域データ）」（国土交通省）
-// https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html
 
 async function loadData(fileData) {
   console.log('Now, loading the data...');
@@ -65,9 +63,44 @@ async function loadData(fileData) {
     // For safely donwloading files, we have enough time to create it.
     setTimeout(() => {
       const v = unifiedData[i];
-      const prefix = 'const ' + v.prefecture + v.name + ' = ';
-      outputScript(v.name + '.min.txt', prefix + JSON.stringify(v));
-      outputScript(v.name + '.txt', prefix + JSON.stringify(v, null, '  '));
+      const longname = v.prefecture + v.name;
+      const prefix = 'const ' + longname + ' = ';
+      const suffix = ';\n if(typeof cityObjs === \'undefined\'){cityObjs = {};} cityObjs[\'' + longname + '\'] = ' + longname + ';';
+      const normalize = `
+{
+  // Get N/S/E/W edge values from all of the polygons that is (x,y)s.
+  const ends = getEnds(` + longname + `['polygons']);
+
+  // Shape size on actual coordinate(before scaling)
+  const shapeWidth = abs(ends.w - ends.e);
+  const shapeHeight = abs(ends.s - ends.n);
+
+  const SquareSize = 360;
+
+  // Calcurate scale and margin.
+  let shapeScale;
+  let horizontalMargin = SquareSize * 0.1;
+  let verticalMargin = SquareSize * 0.1;
+  if (shapeWidth > shapeHeight) {
+    shapeScale = (SquareSize - 2 * horizontalMargin) / shapeWidth;
+    verticalMargin = (SquareSize - shapeHeight * shapeScale) / 2;
+  } else {
+    shapeScale = (SquareSize - 2 * verticalMargin) / shapeHeight;
+    horizontalMargin = (SquareSize - shapeWidth * shapeScale) / 2;
+  }
+
+  const normalizedPolygons = ` + longname + `['polygons'].map( (polygon) => {
+    return polygon.map( coordinates => {
+        return {x: coordinates.x * shapeScale - ends.w * shapeScale + horizontalMargin, 
+                y: -coordinates.y * shapeScale + ends.s * shapeScale + verticalMargin};
+      });
+  });
+
+  ` + longname + `['normalizedPolygons'] = normalizedPolygons;
+}
+      `
+      outputScript(v.name + '.min.txt', prefix + JSON.stringify(v) + suffix + normalize );
+      outputScript(v.name + '.txt', prefix + JSON.stringify(v, null, '  ') + suffix + normalize);
     }, i * 1000);
   }
 }
