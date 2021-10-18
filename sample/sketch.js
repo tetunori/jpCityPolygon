@@ -90,7 +90,7 @@ function draw() {
 
   // get target-city object and achieve its several polygon(x,y) data
   const targetHometown = cityObjs[gTargetPrefecture + gTargetHometown];
-  const targetPolygons = targetHometown.polygons;
+  const targetPolygons = targetHometown.normalizedPolygons;
 
   // --- Calcurate coordinates to draw
   // Get N/S/E/W edge values from all of the polygons that is (x,y)s.
@@ -116,13 +116,13 @@ function draw() {
   {
     const tl = gTopLayer;
     tl.push();
-    tl.translate(-ends.w * shapeScale + horizontalMargin, ends.s * shapeScale + verticalMargin);
+    tl.translate(-ends.w * shapeScale + horizontalMargin, -ends.n * shapeScale + verticalMargin);
     tl.erase();
 
     targetPolygons.forEach((polygon) => {
       tl.beginShapePattern();
       for (let i = 0; i < polygon.length; i++) {
-        tl.vertexPattern(polygon[i].x * shapeScale, -polygon[i].y * shapeScale);
+        tl.vertexPattern(polygon[i].x * shapeScale, polygon[i].y * shapeScale);
       }
       tl.endShapePattern();
     });
