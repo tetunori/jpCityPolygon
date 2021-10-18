@@ -10220,12 +10220,41 @@ const 北海道江別市 = {
 };
  if(typeof cityObjs === 'undefined'){cityObjs = {};} cityObjs['北海道江別市'] = 北海道江別市;
 {
+  // Get N/S/E/W ends
+  const getEnds = (polygons) => {
+    // Get (x,y) array from vertex array(polygon)
+    let xs = [];
+    let ys = [];
+
+    polygons.forEach((polygon) => {
+      xs = xs.concat(polygon.map((v) => v.x));
+      ys = ys.concat(polygon.map((v) => v.y));
+    });
+    // console.log({ xs, ys });
+
+    // Prepare max/min proc
+    const _max = (a, b) => Math.max(a, b);
+    const _min = (a, b) => Math.min(a, b);
+
+    // Get N/S/E/W ends values
+    const n = ys.reduce(_min, 91);
+    const s = ys.reduce(_max, 0);
+    const e = xs.reduce(_max, 0);
+    const w = xs.reduce(_min, 181);
+
+    const ends = { n, s, e, w };
+    // console.log(ends);
+
+    // Return ends object
+    return ends;
+  };
+
   // Get N/S/E/W edge values from all of the polygons that is (x,y)s.
   const ends = getEnds(北海道江別市['polygons']);
 
   // Shape size on actual coordinate(before scaling)
-  const shapeWidth = abs(ends.w - ends.e);
-  const shapeHeight = abs(ends.s - ends.n);
+  const shapeWidth = Math.abs(ends.w - ends.e);
+  const shapeHeight = Math.abs(ends.s - ends.n);
 
   const SquareSize = 360;
 
