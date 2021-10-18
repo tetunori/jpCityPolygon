@@ -48,7 +48,17 @@ function setup() {
 }
 
 function draw() {
-  // --- Force flag and the interval logic
+  
+  // --- Skip logic
+  // Since Each hometonw script has a cityObj,
+  // cityObjs must exist if it is ready. Othewise we skip this turn and wait loading.
+  if (
+    typeof cityObjs === 'undefined' ||
+    typeof cityObjs[gTargetPrefecture + gTargetHometown] === 'undefined'
+  )
+    return;
+
+  // Force flag, automatic-generation and interval logic
   if (gForceGenerate) {
     // Forcibly generate & draw!
     gForceGenerate = false;
@@ -57,14 +67,6 @@ function draw() {
     if (!gAutoGenerate) return;
     if (frameCount % 45 !== 0) return;
   }
-
-  // Since Each hometonw script has a cityObj,
-  // cityObjs must exist if it is ready. Othewise we skip this turn and wait loading.
-  if (
-    typeof cityObjs === 'undefined' ||
-    typeof cityObjs[gTargetPrefecture + gTargetHometown] === 'undefined'
-  )
-    return;
 
   // --- p5.pattern settings
   // const COLS = createCols("https://coolors.co/eb300f-fe7688-fff566-212121-306e42-0d3b66");
