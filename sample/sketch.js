@@ -13,6 +13,8 @@
 let topLayer;
 let W;
 
+let forceGenerate = false;
+
 let gAutoGenerate = true;
 
 let gFont;
@@ -25,7 +27,10 @@ let gTargetCity = '札幌市中央区'
 function setup() {
   // p5.js settings
   W = min(windowWidth, windowHeight);
-  createCanvas(W, W).mousePressed( toggleController );
+  const canvas = createCanvas(W, W);
+  const canvas_container = document.getElementById("canvas-container");
+  canvas.parent(canvas_container);
+
   topLayer = createGraphics(W, W);
   frameRate(30);
   textSize(W / 10);
@@ -39,12 +44,16 @@ function setup() {
 
 function draw() {
 
-  if( !gAutoGenerate ){
-    return;
-  }
+  if( forceGenerate ){
+    forceGenerate = false;
+  }else{
+    if( !gAutoGenerate ){
+      return;
+    }
 
-  if( frameCount % 60 !== 0 ){
-    return;
+    if( frameCount % 45 !== 0 ){
+      return;
+    }
   }
 
   if( (typeof cityObjs === 'undefined') || 
@@ -112,17 +121,9 @@ function draw() {
 
   image(topLayer, 0, 0);
   fill(255, 255, 255, 140);
-  const margin = 30;
+  const margin = 40;
   text(targetCity.name, margin, W / 12 + margin);
 
-
-
-  if( isEnableCaptureImage() ){
-    saveImage();
-  }
-
-  // Redraw controller
-  redrawControllers();
 }
 
 const drawBackGroundPattern = () => {

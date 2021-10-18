@@ -1,7 +1,4 @@
 
-// Settings
-let gToggleController = true;
-
 // For controllers
 let gCheckAutoGenerate = undefined;
 let gBtGenerate = undefined;
@@ -10,14 +7,16 @@ let gSelName = undefined;
 let gSelPrefecture = undefined;
 // let gSliderCellSize = CELL_SIZE_DEFAULT;
 
+let gControllerContainer = document.getElementById("controller-container");
+
 // Prapare Controllers
 const prepareControllers = () => {
 
   // gSliderCellSize = createSlider( CELL_SIZE_MIN, CELL_SIZE_MAX, CELL_SIZE_DEFAULT );
-
-  initializeChecks();
-  initializeButtons();
+  
   initializeSelectors();
+  initializeButtons();
+  initializeChecks();
 
 }
 
@@ -25,7 +24,8 @@ const initializeChecks = () => {
   
   gCheckAutoGenerate = createCheckbox(': Auto Generation', true);
   gCheckAutoGenerate.changed(onCheckedAutoGeneration);
-  console.log(gCheckAutoGenerate);
+  gCheckAutoGenerate.parent(gControllerContainer);
+
 
 }
 
@@ -44,15 +44,20 @@ const initializeButtons = () => {
 
   gBtGenerate = createButton( 'Generate!' );
   gBtGenerate.mousePressed( generateCity );
+  gBtGenerate.parent(gControllerContainer);
+  gBtGenerate.class("btnPrimary");
 
   gBtSave = createButton('Save');
-  gBtSave.mousePressed( enableCaptureImage );
+  gBtSave.mousePressed( saveImage );
+  gBtSave.parent(gControllerContainer);
+  gBtSave.class("btnSecondary");
 
 }
 
 // Toggle Grid
 const generateCity = () => {
   // Generate!
+  forceGenerate = true;
 }
 
 const initializeSelectors = () => {
@@ -64,6 +69,11 @@ const initializeSelectors = () => {
   });
   gSelPrefecture.selected(gTargetPrefecture);
   gSelPrefecture.changed(mySelectEvent);
+  gSelPrefecture.parent(gControllerContainer);
+  gSelPrefecture.style("position","relative");
+  gSelPrefecture.style("left","0px");
+  gSelPrefecture.style("top","0px");
+  gSelPrefecture.class("selector");
 
   gSelName = createSelect();
   gSelName.position(10, 40);
@@ -72,46 +82,33 @@ const initializeSelectors = () => {
   });
   gSelName.selected(gTargetCity);
   gSelName.changed(mySelectEvent);
+  gSelName.parent(gControllerContainer);
+  gSelName.style("position","relative");
+  gSelName.style("left","0px");
+  gSelName.style("top","0px");
+  gSelName.class("selector");
 
 }
 
 function mySelectEvent() {
+  
+  forceGenerate = true;
   gTargetPrefecture = gSelPrefecture.value();
   gTargetCity = gSelName.value();
   if(typeof cityObjs[gTargetPrefecture + gTargetCity] === 'undefined') {
-      loadScript('../data/'+ gTargetPrefecture + '/' + gTargetCity + '.min.js');
+    loadScript('../data/'+ gTargetPrefecture + '/' + gTargetCity + '.min.js');
   }
+  
 }
 
 
 
-// Toggle Controller setting
-const toggleController = () => {
 
-  gToggleController = !gToggleController;
-
-  if( gToggleController === false ){
-    
-    gCheckAutoGenerate.hide();
-    gBtGenerate.hide();
-    gBtSave.hide();
-    gSelName.hide();
-    gSelPrefecture.hide();
-
-  }else{
-
-    gCheckAutoGenerate.show();
-    gBtGenerate.show();
-    gBtSave.show();
-    gSelName.show();
-    gSelPrefecture.show();
-
-  }
-
-}
 
 // Re-draw controllers 
 const redrawControllers = () => {
+
+  return;
 
   if( gToggleController === false ){
     return;
