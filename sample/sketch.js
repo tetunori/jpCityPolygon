@@ -27,7 +27,7 @@ function setup() {
   W = min(windowWidth, windowHeight);
   createCanvas(W, W).mousePressed( toggleController );
   topLayer = createGraphics(W, W);
-  frameRate(0.5);
+  frameRate(30);
   textSize(W / 10);
   textFont(gFont);
 
@@ -38,6 +38,14 @@ function setup() {
 }
 
 function draw() {
+
+  if( !gAutoGenerate ){
+    return;
+  }
+
+  if( frameCount % 60 !== 0 ){
+    return;
+  }
 
   if( (typeof cityObjs === 'undefined') || 
     (typeof cityObjs[gTargetPrefecture + gTargetCity] === 'undefined') ){
@@ -108,10 +116,9 @@ function draw() {
   text(targetCity.name, margin, W / 12 + margin);
 
 
+
   if( isEnableCaptureImage() ){
-
     saveImage();
-
   }
 
   // Redraw controller

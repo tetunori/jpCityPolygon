@@ -25,10 +25,12 @@ const initializeChecks = () => {
   
   gCheckAutoGenerate = createCheckbox(': Auto Generation', true);
   gCheckAutoGenerate.changed(onCheckedAutoGeneration);
+  console.log(gCheckAutoGenerate);
 
 }
 
-const onCheckedAutoGeneration = () => {
+// const onCheckedAutoGeneration = () => {
+function onCheckedAutoGeneration() {
   if (this.checked()) {
     console.log('Checking!');
     gAutoGenerate = true;
@@ -60,7 +62,7 @@ const initializeSelectors = () => {
   prefectureSelectorOption.forEach( element => {
     gSelPrefecture.option( element );
   });
-  // gSelName.selected('kiwi');
+  gSelPrefecture.selected(gTargetPrefecture);
   gSelPrefecture.changed(mySelectEvent);
 
   gSelName = createSelect();
@@ -68,7 +70,7 @@ const initializeSelectors = () => {
   citySelectorOption[gTargetPrefecture].forEach( element => {
     gSelName.option( element );
   });
-  // gSelName.selected('kiwi');
+  gSelName.selected(gTargetCity);
   gSelName.changed(mySelectEvent);
 
 }
@@ -76,7 +78,9 @@ const initializeSelectors = () => {
 function mySelectEvent() {
   gTargetPrefecture = gSelPrefecture.value();
   gTargetCity = gSelName.value();
-  loadScript('../data/'+ gTargetPrefecture + '/' + gTargetCity + '.min.js');
+  if(typeof cityObjs[gTargetPrefecture + gTargetCity] === 'undefined') {
+      loadScript('../data/'+ gTargetPrefecture + '/' + gTargetCity + '.min.js');
+  }
 }
 
 
