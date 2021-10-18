@@ -1,7 +1,6 @@
 /* Noto Sans JP - Google Fonts */ 
 @import url( https://fonts.googleapis.com/earlyaccess/notosansjp.css );
 
-
 html, body {
   background-color: #f0f0f0;
   font-family: 'Noto Sans JP', sans-serif;
@@ -15,6 +14,8 @@ html, body {
 canvas {
   display: block;
   margin : 0 auto;
+  font-family: 'Noto Sans JP', sans-serif;
+
 }
 
 #titleText {

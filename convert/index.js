@@ -1,5 +1,3 @@
-// Data should be from 「国土数値情報（行政区域データ）」（国土交通省）
-// https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html
 
 async function loadData(fileData) {
   console.log('Now, loading the data...');

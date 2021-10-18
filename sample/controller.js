@@ -29,7 +29,7 @@ const initializeSelectors = () => {
   citySelectorOption[gTargetPrefecture].forEach((element) => {
     gSelName.option(element);
   });
-  gSelName.selected(gTargetCity);
+  gSelName.selected(gTargetHometown);
 
   // Common settings
   // P5 Selector default setting has position: absolute and so on.
@@ -47,16 +47,16 @@ const initializeSelectors = () => {
 // Event callback for Selector
 const selectorEvent = () => {
   // If user change selector, generate once forcely.(not depending on refresh-rate)
-  forceGenerate = true;
+  gForceGenerate = true;
 
   // Set values from selectors.
   gTargetPrefecture = gSelPrefecture.value();
-  gTargetCity = gSelName.value();
+  gTargetHometown= gSelName.value();
 
   // If cityObjs(God Object includes all of the imported city Objects) do NOT exist,
   // we will load new script dynamically.
-  if (typeof cityObjs[gTargetPrefecture + gTargetCity] === 'undefined') {
-    loadScript('../data/' + gTargetPrefecture + '/' + gTargetCity + '.min.js');
+  if (typeof cityObjs[gTargetPrefecture + gTargetHometown] === 'undefined') {
+    loadHometownScript(gTargetPrefecture, gTargetHometown);
   }
 };
 
@@ -65,7 +65,7 @@ const initializeButtons = () => {
   // Generate button
   gBtGenerate = createButton('Generate!');
   gBtGenerate.mousePressed(() => {
-    forceGenerate = true;
+    gForceGenerate = true;
   });
   gBtGenerate.parent(gControllerContainer);
   gBtGenerate.class('btnPrimary');
