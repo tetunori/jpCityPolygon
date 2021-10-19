@@ -23,6 +23,7 @@ const initializeSelectors = () => {
     gSelPrefecture.option(element);
   });
   gSelPrefecture.selected(gTargetPrefecture);
+  gSelPrefecture.changed(prefectureSelectorEvent);
 
   // Hometown name selector
   gSelName = createSelect();
@@ -30,12 +31,12 @@ const initializeSelectors = () => {
     gSelName.option(element);
   });
   gSelName.selected(gTargetHometown);
+  gSelName.changed(hometownSelectorEvent);
 
   // Common settings
   // P5 Selector default setting has position: absolute and so on.
   // So we should change settings as below.
   [gSelPrefecture, gSelName].forEach((sel) => {
-    sel.changed(selectorEvent);
     sel.parent(gControllerContainer);
     sel.style('position', 'relative');
     sel.style('left', '0px');
@@ -44,14 +45,27 @@ const initializeSelectors = () => {
   });
 };
 
-// Event callback for Selector
-const selectorEvent = () => {
+// Event callback for Prefecture Selector
+const prefectureSelectorEvent = () => {
   // If user change selector, generate once forcely.(not depending on refresh-rate)
   gForceGenerate = true;
 
+  // Evacuate old prefecture
+  const oldPrefecture = gTargetPrefecture;
+
   // Set values from selectors.
   gTargetPrefecture = gSelPrefecture.value();
-  gTargetHometown= gSelName.value();
+
+  // Delete old options
+  citySelectorOption[oldPrefecture].forEach((element) => {
+    gSelName.option(element, false);
+  });
+
+  // Add new options
+  citySelectorOption[gTargetPrefecture].forEach((element) => {
+    gSelName.option(element);
+  });
+  gTargetHometown = gSelName.value();
 
   // If cityObjs(God Object includes all of the imported city Objects) do NOT exist,
   // we will load new script dynamically.
@@ -60,7 +74,23 @@ const selectorEvent = () => {
   }
 };
 
-// Initialize Check box controllers
+// Event callback for hometown Selector
+const hometownSelectorEvent = () => {
+  // If user change selector, generate once forcely.(not depending on refresh-rate)
+  gForceGenerate = true;
+
+  // Set values from selectors.
+  gTargetPrefecture = gSelPrefecture.value();
+  gTargetHometown = gSelName.value();
+
+  // If cityObjs(God Object includes all of the imported city Objects) do NOT exist,
+  // we will load new script dynamically.
+  if (typeof cityObjs[gTargetPrefecture + gTargetHometown] === 'undefined') {
+    loadHometownScript(gTargetPrefecture, gTargetHometown);
+  }
+};
+
+// Initialize Button controllers
 const initializeButtons = () => {
   // Generate button
   gBtGenerate = createButton('Generate!');
@@ -69,6 +99,7 @@ const initializeButtons = () => {
   });
   gBtGenerate.parent(gControllerContainer);
   gBtGenerate.class('btnPrimary');
+  gBtGenerate.attribute('disabled', '');
 
   // Save image button
   gBtSave = createButton('Save');
@@ -82,6 +113,11 @@ const initializeChecks = () => {
   gCheckAutoGenerate = createCheckbox(' : Auto Generation', true);
   gCheckAutoGenerate.changed(() => {
     gAutoGenerate = gCheckAutoGenerate.checked();
+    if( gAutoGenerate ){
+      gBtGenerate.attribute('disabled', '');
+    }else{
+      gBtGenerate.removeAttribute('disabled');
+    }
   });
   gCheckAutoGenerate.parent(gControllerContainer);
 };

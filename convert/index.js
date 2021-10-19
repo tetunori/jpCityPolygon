@@ -18,7 +18,12 @@ async function loadData(fileData) {
 
     if (v.properties.N03_004.slice(-1) === '区') {
       // For '区', add city name like '札幌市北区'
-      name += v.properties.N03_003;
+
+      // But '東京都' has no city name and it uses null for this value.
+      if( v.properties.N03_003 !== null ){
+        name += v.properties.N03_003;
+      }
+      
     }
 
     name += v.properties.N03_004;
@@ -68,12 +73,41 @@ async function loadData(fileData) {
       const suffix = ';\n if(typeof cityObjs === \'undefined\'){cityObjs = {};} cityObjs[\'' + longname + '\'] = ' + longname + ';';
       const normalize = `
 {
+  // Get N/S/E/W ends
+  const getEnds = (polygons) => {
+    // Get (x,y) array from vertex array(polygon)
+    let xs = [];
+    let ys = [];
+
+    polygons.forEach((polygon) => {
+      xs = xs.concat(polygon.map((v) => v.x));
+      ys = ys.concat(polygon.map((v) => v.y));
+    });
+    // console.log({ xs, ys });
+
+    // Prepare max/min proc
+    const _max = (a, b) => Math.max(a, b);
+    const _min = (a, b) => Math.min(a, b);
+
+    // Get N/S/E/W ends values
+    const n = ys.reduce(_min, 91);
+    const s = ys.reduce(_max, 0);
+    const e = xs.reduce(_max, 0);
+    const w = xs.reduce(_min, 181);
+
+    const ends = { n, s, e, w };
+    // console.log(ends);
+
+    // Return ends object
+    return ends;
+  };
+
   // Get N/S/E/W edge values from all of the polygons that is (x,y)s.
   const ends = getEnds(` + longname + `['polygons']);
 
   // Shape size on actual coordinate(before scaling)
-  const shapeWidth = abs(ends.w - ends.e);
-  const shapeHeight = abs(ends.s - ends.n);
+  const shapeWidth = Math.abs(ends.w - ends.e);
+  const shapeHeight = Math.abs(ends.s - ends.n);
 
   const SquareSize = 360;
 
@@ -99,8 +133,8 @@ async function loadData(fileData) {
   ` + longname + `['normalizedPolygons'] = normalizedPolygons;
 }
       `
-      outputScript(v.name + '.min.txt', prefix + JSON.stringify(v) + suffix + normalize );
-      outputScript(v.name + '.txt', prefix + JSON.stringify(v, null, '  ') + suffix + normalize);
+      outputScript(longname + '.min.txt', prefix + JSON.stringify(v) + suffix + normalize );
+      outputScript(longname + '.txt', prefix + JSON.stringify(v, null, '  ') + suffix + normalize);
     }, i * 1000);
   }
 }
@@ -191,20 +225,24 @@ fileZone.addEventListener('dragover', (e) => {
   e.preventDefault();
 });
 
+let files;
+
 fileZone.addEventListener('drop', (e) => {
   e.preventDefault();
 
   files = e.dataTransfer.files;
   // console.log(files);
 
-  const fileReader = new FileReader();
-  fileReader.onload = (e) => { 
-    // console.log('Finish reading file');
-    loadData(e.target.result);
-  };
+  // Read data from all files.
+  for(let j = 0; j < files.length; j++){
+    const fileReader = new FileReader();
+    fileReader.onload = (e) => { 
+      // console.log('Finish reading file');
+      loadData(e.target.result);
+    };
 
-  // Support only one(1st) file.
-  // console.log('Start reading file: ' + files[0].name);
-  fileReader.readAsDataURL(files[0]);
+    fileReader.readAsDataURL(files[j]);
+  }
+  
 });
 
