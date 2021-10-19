@@ -1,4 +1,3 @@
-
 const prefectureSelectorOption = [
   '北海道',
   '青森県',
@@ -50,7 +49,7 @@ const prefectureSelectorOption = [
 ];
 
 const citySelectorOption = {
-  '北海道': [
+  北海道: [
     '北見市',
     '網走市',
     '紋別市',
@@ -245,7 +244,7 @@ const citySelectorOption = {
     '江差町',
     '上ノ国町',
   ],
-  '青森県': [
+  青森県: [
     'おいらせ町',
     'つがる市',
     'むつ市',
@@ -286,6 +285,5 @@ const citySelectorOption = {
     '鰺ヶ沢町',
     '鶴田町',
     '黒石市',
-  ]
-
+  ],
 };

@@ -128,8 +128,8 @@ async function loadData(fileData) {
   ` + longname + `['normalizedPolygons'] = normalizedPolygons;
 }
       `
-      outputScript(v.name + '.min.txt', prefix + JSON.stringify(v) + suffix + normalize );
-      outputScript(v.name + '.txt', prefix + JSON.stringify(v, null, '  ') + suffix + normalize);
+      outputScript(longname + '.min.txt', prefix + JSON.stringify(v) + suffix + normalize );
+      outputScript(longname + '.txt', prefix + JSON.stringify(v, null, '  ') + suffix + normalize);
     }, i * 1000);
   }
 }
@@ -220,20 +220,24 @@ fileZone.addEventListener('dragover', (e) => {
   e.preventDefault();
 });
 
+let files;
+
 fileZone.addEventListener('drop', (e) => {
   e.preventDefault();
 
   files = e.dataTransfer.files;
   // console.log(files);
 
-  const fileReader = new FileReader();
-  fileReader.onload = (e) => { 
-    // console.log('Finish reading file');
-    loadData(e.target.result);
-  };
+  // Read data from all files.
+  for(let j = 0; j < files.length; j++){
+    const fileReader = new FileReader();
+    fileReader.onload = (e) => { 
+      // console.log('Finish reading file');
+      loadData(e.target.result);
+    };
 
-  // Support only one(1st) file.
-  // console.log('Start reading file: ' + files[0].name);
-  fileReader.readAsDataURL(files[0]);
+    fileReader.readAsDataURL(files[j]);
+  }
+  
 });
 

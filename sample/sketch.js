@@ -48,7 +48,6 @@ function setup() {
 }
 
 function draw() {
-  
   // --- Skip logic
   // Since Each hometonw script has a cityObj,
   // cityObjs must exist if it is ready. Othewise we skip this turn and wait loading.
