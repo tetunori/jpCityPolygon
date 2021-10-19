@@ -90,7 +90,7 @@ const hometownSelectorEvent = () => {
   }
 };
 
-// Initialize Check box controllers
+// Initialize Button controllers
 const initializeButtons = () => {
   // Generate button
   gBtGenerate = createButton('Generate!');
@@ -99,6 +99,7 @@ const initializeButtons = () => {
   });
   gBtGenerate.parent(gControllerContainer);
   gBtGenerate.class('btnPrimary');
+  gBtGenerate.attribute('disabled', '');
 
   // Save image button
   gBtSave = createButton('Save');
@@ -112,6 +113,11 @@ const initializeChecks = () => {
   gCheckAutoGenerate = createCheckbox(' : Auto Generation', true);
   gCheckAutoGenerate.changed(() => {
     gAutoGenerate = gCheckAutoGenerate.checked();
+    if( gAutoGenerate ){
+      gBtGenerate.attribute('disabled', '');
+    }else{
+      gBtGenerate.removeAttribute('disabled');
+    }
   });
   gCheckAutoGenerate.parent(gControllerContainer);
 };
