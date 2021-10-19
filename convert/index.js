@@ -18,7 +18,12 @@ async function loadData(fileData) {
 
     if (v.properties.N03_004.slice(-1) === '区') {
       // For '区', add city name like '札幌市北区'
-      name += v.properties.N03_003;
+
+      // But '東京都' has no city name and it uses null for this value.
+      if( v.properties.N03_003 !== null ){
+        name += v.properties.N03_003;
+      }
+      
     }
 
     name += v.properties.N03_004;
