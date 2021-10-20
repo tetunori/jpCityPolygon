@@ -62,11 +62,15 @@ function draw() {
 
 ## Samples 
 ### Basic Sample
-image
+
+<img src="https://tetunori.github.io/jpCityPolygon/images/basic1.png" alt="basic1" width="360px">  
+
  - [Sample On GitHub](https://tetunori.github.io/jpCityPolygon/sample/basic/)
  - [Sample On OpenProcessing](https://openprocessing.org/sketch/??????)
+
 ### Generative Hometown
-<img src="https://tetunori.github.io/jpCityPolygon/images/generativeHometown1.png" alt="generativeHometown1" width="375px">  
+<img src="https://tetunori.github.io/jpCityPolygon/images/generativeHometown1.png" alt="generativeHometown1" width="360px">  
+
  - [Sample On GitHub](https://tetunori.github.io/jpCityPolygon/sample/generativeHometown/)
  - [Sample On OpenProcessing](https://openprocessing.org/sketch/??????)
 
