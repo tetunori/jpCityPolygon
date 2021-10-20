@@ -1,46 +1,42 @@
 # Description 🗾
 
 **jpCityPolygon** is a dataset consists of polygon data of all Japanese cities.  
-You can draw city-polygon without difficulty like this!  
+You can draw city-polygon without difficulty!  
  /// movie
 
-Please see the examples.
-A🌟
-B
-
-Now, the version is `0.8.0`. (beta release)  
+Now, the latest version is `0.8.0`. (beta release)  
 
 # Simple Usage
 ## Environment 
 This data is supplied as a Javascript Object.
 
 ## Import library
-Just pick up a city and insert its script in `https://tetunori.github.io/jpCityPolygon/dist/v0.8.0/dist/`.  
-There are a lot of `<都道府県名>/<市区町村名>.min.js and .js` files in the URL.  
+Just pick up a city and insert its script existing in `https://tetunori.github.io/jpCityPolygon/dist/v0.8.0/`.  
+There are a lot of `<都道府県名>/<市区町村名>.min.js and .js` files there and you can confirm the files from [here](https://github.com/tetunori/jpCityPolygon/tree/main/dist/v0.8.0).
 
-For example, 北海道北広島市 is like this.  
+For example, **北海道北広島市** is like this.  
 ```html 
-<script src="https://tetunori.github.io/jpCityPolygon/dist/v0.8.0/dist/北海道/北広島市.min.js"></script>
+<script src="https://tetunori.github.io/jpCityPolygon/dist/v0.8.0/北海道/北広島市.min.js"></script>
 ```
 
 ## Use Polygon Object
 ### Object Structure
-Each `<都道府県名>/<市区町村名>.min.js and .js` has one main object `<都道府県名><市区町村名>`, like `'北海道北広島市'`.  
-This object consists of the following 5 properties:  
-- prefecture
+Each `<都道府県名>/<市区町村名>.js and .min.js` has a single main object `<都道府県名><市区町村名>`, like `北海道北広島市`.  
+This object has the following 5 properties:  
+- prefecture: String
   - Prefecture name (都道府県名)
-- name
+- name: String
   - City name (市区町村名)
-- latlons
+- latlons: Array of Polygons
   - Multiple raw polygons data of latitude and longitude formatted as `{'lat':..., 'lon':...}`
-- polygons
+- polygons: Array of Polygons
   - Multiple raw polygons data of (x, y) coordinate(Mercator Projection) formatted as `{'x':..., 'y':...}`
-- normalizedPolygons
+- normalizedPolygons: Array of Polygons
   - polygon normalized data of (x, y) coordinate(Mercator Projection) formatted as `{'x':..., 'y':...}`
   - This data is normalized for being suitable for the canvas size 360*360. 
   - I recommend using this data first!
 
-### example with p5.js
+### Use with p5.js
 How simple it is!
 ```javascript
 function setup() {
@@ -65,12 +61,14 @@ function draw() {
 ```
 
 ## Samples 
- - [Basic Sample On GitHub](https://tetunori.github.io/p5MovRec/sample/basic/)
- - [Basic Sample On P5 Web Editor](https://editor.p5js.org/tetunori/sketches/cWvkz1E2_)  
- - [Basic Sample On OpenProcessing](https://openprocessing.org/sketch/1212512)
- - [Basic Sample On GitHub](https://tetunori.github.io/p5MovRec/sample/basic/)
- - [Basic Sample On P5 Web Editor](https://editor.p5js.org/tetunori/sketches/cWvkz1E2_)  
- - [Basic Sample On OpenProcessing](https://openprocessing.org/sketch/1212512)
+### Basic Sample
+image
+ - [Sample On GitHub](https://tetunori.github.io/jpCityPolygon/sample/basic/)
+ - [Sample On OpenProcessing](https://openprocessing.org/sketch/??????)
+### Generative Hometown
+<img src="https://tetunori.github.io/jpCityPolygon/images/generativeHometown1.png" alt="generativeHometown1" width="375px">  
+ - [Sample On GitHub](https://tetunori.github.io/jpCityPolygon/sample/generativeHometown/)
+ - [Sample On OpenProcessing](https://openprocessing.org/sketch/??????)
 
 # Issue
 So far, there is no issues. But I cannot test all of the cities.  
@@ -84,12 +82,12 @@ Tetsunori NAKAYAMA.
 
 # Reference
 ## What motivated me
-['埼玉県の描き方' presentation](https://docs.google.com/presentation/d/1VgaI-CEZAcnpSP6yLlsxVNamHRQD64apeQsP0_mikEU/edit?usp=sharing) by anozon.
+- ['埼玉県の描き方' presentation](https://docs.google.com/presentation/d/1VgaI-CEZAcnpSP6yLlsxVNamHRQD64apeQsP0_mikEU/edit?usp=sharing) by anozon.
 
 ## Data
 - Made from [「国土数値情報（行政区域データ）」（国土交通省）](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)
 
-## Sample
+## Generative Hometown Sample
 - Canvas/Controller layout
   - ['210923a'](https://openprocessing.org/sketch/1275637) by takawo
 - Pattern drawing
