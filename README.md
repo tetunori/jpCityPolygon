@@ -2,8 +2,7 @@
 
 **jpCityPolygon** is a dataset consists of polygon data of all Japanese cities.  
 You can draw city-polygon without difficulty!  
-
-https://user-images.githubusercontent.com/14086390/138119988-2891adff-e058-4074-b0fd-f0177a141fb6.mp4
+<img src="https://tetunori.github.io/jpCityPolygon/images/logo.png" alt="logo" width="640px">  
 
 Now, the latest version is `0.8.0`. (beta release)  
 
