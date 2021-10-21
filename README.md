@@ -91,6 +91,7 @@ Tetsunori NAKAYAMA.
 
 ## Data
 - Made from [「国土数値情報（行政区域データ）」（国土交通省）](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)
+  - データの基準年月日は平成31（2019）年 1月 1日時点のものです。
 
 ## Generative Hometown Sample
 - Canvas/Controller layout
