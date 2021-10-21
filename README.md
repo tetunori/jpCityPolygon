@@ -10,7 +10,7 @@ Now, the latest version is `0.8.0`. (beta release)
 ## Environment 
 This data is supplied as a Javascript Object.
 
-## Import library
+## Import Data
 Just pick up a city and insert its script existing in `https://tetunori.github.io/jpCityPolygon/dist/v0.8.0/`.  
 There are a lot of `<都道府県名>/<市区町村名>.min.js and .js` files there and you can confirm the files from [here](https://github.com/tetunori/jpCityPolygon/tree/main/dist/v0.8.0).
 
