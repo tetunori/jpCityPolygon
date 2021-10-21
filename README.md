@@ -1,6 +1,6 @@
 # Description 🗾
 
-**jpCityPolygon** is a dataset consists of polygon data of all Japanese cities.  
+**jpCityPolygon** is a dataset consisting of polygon data of all cities in Japan.  
 You can draw city-polygon without difficulty!  
 <img src="https://tetunori.github.io/jpCityPolygon/images/logo.png" alt="logo" width="640px">  
 
