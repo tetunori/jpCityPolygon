@@ -66,7 +66,10 @@ const prefectureSelectorEvent = () => {
     gSelName.option(element);
   });
   gTargetHometown = gSelName.value();
-
+  if(gTargetPrefecture === gTargetHometown){
+    gTargetHometown = '';
+  }
+  
   // If cityObjs(God Object includes all of the imported city Objects) do NOT exist,
   // we will load new script dynamically.
   if (typeof cityObjs[gTargetPrefecture + gTargetHometown] === 'undefined') {
@@ -82,6 +85,9 @@ const hometownSelectorEvent = () => {
   // Set values from selectors.
   gTargetPrefecture = gSelPrefecture.value();
   gTargetHometown = gSelName.value();
+  if(gTargetPrefecture === gTargetHometown){
+    gTargetHometown = '';
+  }
 
   // If cityObjs(God Object includes all of the imported city Objects) do NOT exist,
   // we will load new script dynamically.

@@ -188,7 +188,11 @@ const getEnds = (polygons) => {
 const loadHometownScript = (targetPrefecture, targetHometown) => {
   var head = document.getElementsByTagName('head')[0];
   var script = document.createElement('script');
-  script.src = `../../dist/v0.8.0/${targetPrefecture}/${targetHometown}.min.js`;
+  if( targetHometown === ''){
+    script.src = `../../dist/v0.9.0/${targetPrefecture}/${targetPrefecture}.min.js`;
+  }else{
+    script.src = `../../dist/v0.9.0/${targetPrefecture}/${targetHometown}.min.js`;
+  }
   head.appendChild(script);
 };
 
