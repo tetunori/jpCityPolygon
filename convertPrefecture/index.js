@@ -12,10 +12,17 @@ async function loadData(fileData) {
 
     // Cherry pick the data we need
     const cherryPickedData = prefectureObj.geometry.coordinates.map((v) => {
+      let latlons;
+      if (prefectureObj.geometry.type === 'Polygon') {
+        latlons = [v];
+      } else {
+        // type: MultiPolygon
+        latlons = v;
+      }
       return {
         prefecture: prefectureName,
         name: prefectureName,
-        latlons: v,
+        latlons: latlons,
       };
     });
     // console.log(cherryPickedData);
@@ -46,7 +53,7 @@ async function loadData(fileData) {
     unifiedData = convertLatLonArrayToObj(unifiedData);
 
     // console.log( JSON.stringify(unifiedData) );
-    // console.log( unifiedData );
+    // console.log(unifiedData);
 
     // For safely donwloading files, we have enough time to create it.
     setTimeout(() => {
