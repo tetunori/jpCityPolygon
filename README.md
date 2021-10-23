@@ -89,8 +89,12 @@ Tetsunori NAKAYAMA.
 - ['埼玉県の描き方' presentation](https://docs.google.com/presentation/d/1VgaI-CEZAcnpSP6yLlsxVNamHRQD64apeQsP0_mikEU/edit?usp=sharing) by anozon.
 
 ## Data
+### City data
 - Made from [「国土数値情報（行政区域データ）」（国土交通省）](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)
   - データの基準年月日は平成31（2019）年 1月 1日時点のものです。
+
+### Prefecture data
+- Using prefectures.geojson from [dataofjapan/land](https://github.com/dataofjapan/land).
 
 ## Generative Hometown Sample
 - Canvas/Controller layout
