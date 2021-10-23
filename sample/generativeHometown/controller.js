@@ -65,8 +65,11 @@ const prefectureSelectorEvent = () => {
   citySelectorOption[gTargetPrefecture].forEach((element) => {
     gSelName.option(element);
   });
-  gTargetHometown = gSelName.value();
-
+  gTargetHometown = gSelName.value().replace("全域", '');
+  if(gTargetPrefecture === gTargetHometown){
+    gTargetHometown = '';
+  }
+  
   // If cityObjs(God Object includes all of the imported city Objects) do NOT exist,
   // we will load new script dynamically.
   if (typeof cityObjs[gTargetPrefecture + gTargetHometown] === 'undefined') {
@@ -81,7 +84,10 @@ const hometownSelectorEvent = () => {
 
   // Set values from selectors.
   gTargetPrefecture = gSelPrefecture.value();
-  gTargetHometown = gSelName.value();
+  gTargetHometown = gSelName.value().replace("全域", '');
+  if(gTargetPrefecture === gTargetHometown){
+    gTargetHometown = '';
+  }
 
   // If cityObjs(God Object includes all of the imported city Objects) do NOT exist,
   // we will load new script dynamically.
