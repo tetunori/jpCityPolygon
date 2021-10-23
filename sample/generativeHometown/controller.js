@@ -65,7 +65,7 @@ const prefectureSelectorEvent = () => {
   citySelectorOption[gTargetPrefecture].forEach((element) => {
     gSelName.option(element);
   });
-  gTargetHometown = gSelName.value();
+  gTargetHometown = gSelName.value().replace("全域", '');
   if(gTargetPrefecture === gTargetHometown){
     gTargetHometown = '';
   }
@@ -84,7 +84,7 @@ const hometownSelectorEvent = () => {
 
   // Set values from selectors.
   gTargetPrefecture = gSelPrefecture.value();
-  gTargetHometown = gSelName.value();
+  gTargetHometown = gSelName.value().replace("全域", '');
   if(gTargetPrefecture === gTargetHometown){
     gTargetHometown = '';
   }
