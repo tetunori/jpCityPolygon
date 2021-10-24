@@ -4,6 +4,8 @@ let gSelName = undefined;
 let gCheckAutoGenerate = undefined;
 let gBtGenerate = undefined;
 let gBtSave = undefined;
+let gRadioColor = undefined;
+let gInputCoolorsURL = undefined;
 
 // Prepare a specified container for layout controllers
 const gControllerContainer = document.getElementById('controller-container');
@@ -13,6 +15,7 @@ const initializeControllers = () => {
   initializeSelectors();
   initializeButtons();
   initializeChecks();
+  initializeRadios();
 };
 
 // Initialize selector controllers
@@ -127,3 +130,47 @@ const initializeChecks = () => {
   });
   gCheckAutoGenerate.parent(gControllerContainer);
 };
+
+// Initialize Radio button controllers
+const initializeRadios = () => {
+
+  const detailsContainer = select('#details-container');
+  const summary = createElement('summary', 'Detailed Settings');
+  summary.parent(detailsContainer);
+
+  gRadioColor = createRadio();
+  gRadioColor.elt.innerText = 'Color Setting: ';
+  gRadioColor.option(1, '1');
+  gRadioColor.option(2, '2');
+  gRadioColor.option(3, '3');
+  gRadioColor.option(4, '4');
+  gRadioColor.option(5, '5');
+  gRadioColor.option(6, 'By Yourself');
+  gRadioColor.selected('1');
+
+  gRadioColor.parent(detailsContainer);
+  // console.log(gRadioColor)
+
+  gInputCoolorsURL = createInput('Set Coolors URL like https://coolors.co/283d3b-197278-edddd4-c44536-772e25', 'text');
+  gInputCoolorsURL.size(400);
+  gInputCoolorsURL.elt.disabled = true;
+  gInputCoolorsURL.parent(detailsContainer);
+
+  detailsContainer.parent(gControllerContainer)
+
+};
+
+// Update color URL setting
+const updateColorURLSetting = () => {
+  if(gRadioColor.value() === '6'){
+    gInputCoolorsURL.elt.disabled = false;
+  }else{
+    gInputCoolorsURL.elt.disabled = true;
+  }
+} 
+
+// Update Controllers
+const updateControllers = () => {
+  updateColorURLSetting();
+} 
+

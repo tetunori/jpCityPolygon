@@ -48,6 +48,10 @@ function setup() {
 }
 
 function draw() {
+
+  // Update Controllers
+  updateControllers();
+
   // --- Skip logic
   // Since Each hometonw script has a cityObj,
   // cityObjs must exist if it is ready. Othewise we skip this turn and wait loading.
@@ -68,12 +72,21 @@ function draw() {
   }
 
   // --- p5.pattern settings
-  // const COLS = createCols("https://coolors.co/eb300f-fe7688-fff566-212121-306e42-0d3b66");
-  // const COLS = createCols('https://coolors.co/50514f-f25f5c-ffe066-247ba0-70c1b3');
-  // const COLS = createCols('https://coolors.co/ff6f59-254441-43aa8b-b2b09b-ef3054');
-  // const COLS = createCols('https://coolors.co/283d3b-197278-edddd4-c44536-772e25');
-  // const COLS = createCols("https://coolors.co/540d6e-ee4266-ffd23f-3bceac-0ead69");
-  const COLS = createCols('https://coolors.co/40037d-0041cd-cac600-009b17-e1036b-b96301');
+  const ColsURLs = [
+    'https://coolors.co/40037d-0041cd-cac600-009b17-e1036b-b96301',
+    'https://coolors.co/eb300f-fe7688-fff566-212121-306e42-0d3b66',
+    'https://coolors.co/50514f-f25f5c-ffe066-247ba0-70c1b3',
+    'https://coolors.co/ff6f59-254441-43aa8b-b2b09b-ef3054',
+    'https://coolors.co/540d6e-ee4266-ffd23f-3bceac-0ead69',
+  ];
+
+  let colsURL;
+  if (parseInt(gRadioColor.value()) === ColsURLs.length + 1) {
+    colsURL = gInputCoolorsURL.value();
+  } else {
+    colsURL = ColsURLs[gRadioColor.value() - 1];
+  }
+  const COLS = createCols(colsURL);
 
   let PALETTE;
   PALETTE = shuffle(COLS, true);
@@ -188,9 +201,9 @@ const getEnds = (polygons) => {
 const loadHometownScript = (targetPrefecture, targetHometown) => {
   var head = document.getElementsByTagName('head')[0];
   var script = document.createElement('script');
-  if( targetHometown === ''){
+  if (targetHometown === '') {
     script.src = `../../dist/v0.9.0/${targetPrefecture}/${targetPrefecture}.min.js`;
-  }else{
+  } else {
     script.src = `../../dist/v0.9.0/${targetPrefecture}/${targetHometown}.min.js`;
   }
   head.appendChild(script);
