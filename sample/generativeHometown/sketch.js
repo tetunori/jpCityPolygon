@@ -87,6 +87,9 @@ function draw() {
     colsURL = ColsURLs[gRadioColor.value() - 1];
   }
   const COLS = createCols(colsURL);
+  if(COLS[0] === '#' || COLS[0] === undefined){
+    return;
+  }
 
   let PALETTE;
   PALETTE = shuffle(COLS, true);
