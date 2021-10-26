@@ -4,25 +4,25 @@
 You can draw city-polygon without difficulty!  
 <img src="https://tetunori.github.io/jpCityPolygon/images/logo.png" alt="logo" width="640px">  
 
-Now, the latest version is `0.9.0`. (beta release)  
+Now, the latest version is `1.0.0`.  
 
 # Simple Usage
 ## Environment 
 This data is supplied as a Javascript Object.
 
 ## Import Data
-Just pick up a city and insert its script existing in `https://tetunori.github.io/jpCityPolygon/dist/v0.9.0/`.  
-There are a lot of `<都道府県名>/<市区町村名>.min.js and .js` files there and you can confirm the files from [here](https://github.com/tetunori/jpCityPolygon/tree/main/dist/v0.9.0).  
+Just pick up a city and insert its script existing in `https://tetunori.github.io/jpCityPolygon/dist/v1.0.0/`.  
+There are a lot of `<都道府県名>/<市区町村名>.min.js and .js` files there and you can confirm the files from [here](https://github.com/tetunori/jpCityPolygon/tree/main/dist/v1.0.0).  
 (For prefectures, see `<都道府県名>/<都道府県名>.min.js and .js` )
 
 For example, **北海道北広島市** (city) is like this.  
 ```html 
-<script src="https://tetunori.github.io/jpCityPolygon/dist/v0.9.0/北海道/北広島市.min.js"></script>
+<script src="https://tetunori.github.io/jpCityPolygon/dist/v1.0.0/北海道/北広島市.min.js"></script>
 ```
 
 Another example, **北海道** (prefecture) is like this.  
 ```html 
-<script src="https://tetunori.github.io/jpCityPolygon/dist/v0.9.0/北海道/北海道.min.js"></script>
+<script src="https://tetunori.github.io/jpCityPolygon/dist/v1.0.0/北海道/北海道.min.js"></script>
 ```
 
 

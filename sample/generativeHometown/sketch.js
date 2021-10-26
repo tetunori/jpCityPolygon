@@ -205,9 +205,9 @@ const loadHometownScript = (targetPrefecture, targetHometown) => {
   var head = document.getElementsByTagName('head')[0];
   var script = document.createElement('script');
   if (targetHometown === '') {
-    script.src = `../../dist/v0.9.0/${targetPrefecture}/${targetPrefecture}.min.js`;
+    script.src = `../../dist/v1.0.0/${targetPrefecture}/${targetPrefecture}.min.js`;
   } else {
-    script.src = `../../dist/v0.9.0/${targetPrefecture}/${targetHometown}.min.js`;
+    script.src = `../../dist/v1.0.0/${targetPrefecture}/${targetHometown}.min.js`;
   }
   head.appendChild(script);
 };
