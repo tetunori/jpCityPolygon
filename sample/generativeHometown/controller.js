@@ -68,11 +68,11 @@ const prefectureSelectorEvent = () => {
   citySelectorOption[gTargetPrefecture].forEach((element) => {
     gSelName.option(element);
   });
-  gTargetHometown = gSelName.value().replace("全域", '');
-  if(gTargetPrefecture === gTargetHometown){
+  gTargetHometown = gSelName.value().replace('全域', '');
+  if (gTargetPrefecture === gTargetHometown) {
     gTargetHometown = '';
   }
-  
+
   // If cityObjs(God Object includes all of the imported city Objects) do NOT exist,
   // we will load new script dynamically.
   if (typeof cityObjs[gTargetPrefecture + gTargetHometown] === 'undefined') {
@@ -87,8 +87,8 @@ const hometownSelectorEvent = () => {
 
   // Set values from selectors.
   gTargetPrefecture = gSelPrefecture.value();
-  gTargetHometown = gSelName.value().replace("全域", '');
-  if(gTargetPrefecture === gTargetHometown){
+  gTargetHometown = gSelName.value().replace('全域', '');
+  if (gTargetPrefecture === gTargetHometown) {
     gTargetHometown = '';
   }
 
@@ -105,10 +105,12 @@ const initializeButtons = () => {
   gBtGenerate = createButton('Generate!');
   gBtGenerate.mousePressed(() => {
     gForceGenerate = true;
+    gCheckAutoGenerate.checked(false);
+    gAutoGenerate = false;
   });
   gBtGenerate.parent(gControllerContainer);
   gBtGenerate.class('btnPrimary');
-  gBtGenerate.attribute('disabled', '');
+  // gBtGenerate.attribute('disabled', '');
 
   // Save image button
   gBtSave = createButton('Save');
@@ -122,9 +124,9 @@ const initializeChecks = () => {
   gCheckAutoGenerate = createCheckbox(' : Auto Generation', true);
   gCheckAutoGenerate.changed(() => {
     gAutoGenerate = gCheckAutoGenerate.checked();
-    if( gAutoGenerate ){
+    if (gAutoGenerate) {
       gBtGenerate.attribute('disabled', '');
-    }else{
+    } else {
       gBtGenerate.removeAttribute('disabled');
     }
   });
@@ -133,10 +135,11 @@ const initializeChecks = () => {
 
 // Initialize Radio button controllers
 const initializeRadios = () => {
-
   const detailsContainer = select('#details-container');
   const summary = createElement('summary', 'Detailed Settings');
   summary.parent(detailsContainer);
+
+  gCheckAutoGenerate.parent(detailsContainer);
 
   gRadioColor = createRadio();
   gRadioColor.elt.innerText = 'Color Setting: ';
@@ -151,26 +154,27 @@ const initializeRadios = () => {
   gRadioColor.parent(detailsContainer);
   // console.log(gRadioColor)
 
-  gInputCoolorsURL = createInput('Set Coolors URL like https://coolors.co/283d3b-197278-edddd4-c44536-772e25', 'text');
+  gInputCoolorsURL = createInput(
+    'Set Coolors URL like https://coolors.co/283d3b-197278-edddd4-c44536-772e25',
+    'text'
+  );
   gInputCoolorsURL.size(400);
   gInputCoolorsURL.elt.disabled = true;
   gInputCoolorsURL.parent(detailsContainer);
 
-  detailsContainer.parent(gControllerContainer)
-
+  detailsContainer.parent(gControllerContainer);
 };
 
 // Update color URL setting
 const updateColorURLSetting = () => {
-  if(gRadioColor.value() === '6'){
+  if (gRadioColor.value() === '6') {
     gInputCoolorsURL.elt.disabled = false;
-  }else{
+  } else {
     gInputCoolorsURL.elt.disabled = true;
   }
-} 
+};
 
 // Update Controllers
 const updateControllers = () => {
   updateColorURLSetting();
-} 
-
+};
